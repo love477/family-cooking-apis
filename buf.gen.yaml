@@ -1,15 +1,15 @@
 version: v1
 plugins:
   - name: go
-    out: apis
+    out: gen
     opt:
       - paths=import
   - name: go-grpc
-    out: apis
+    out: gen
     opt:
       - paths=import
   - name: grpc-gateway
-    out: apis
+    out: gen
     opt:
       - paths=import
       - generate_unbound_methods=true
