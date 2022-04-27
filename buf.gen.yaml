@@ -1,0 +1,19 @@
+version: v1
+plugins:
+  - name: go
+    out: apis
+    opt:
+      - paths=import
+  - name: go-grpc
+    out: apis
+    opt:
+      - paths=import
+  - name: grpc-gateway
+    out: apis
+    opt:
+      - paths=import
+      - generate_unbound_methods=true
+      - standalone=true
+  - name: openapiv2
+    out: doc
+    opt: 

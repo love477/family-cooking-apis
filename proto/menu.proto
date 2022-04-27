@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+option go_package = "family-cooking-apis/v1";
+
+message SayHelloReq {
+  string name = 1;
+}
+
+message SayHelloRes {
+  string data = 1;
+}
