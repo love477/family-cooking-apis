@@ -16,4 +16,5 @@ plugins:
       - standalone=true
   - name: openapiv2
     out: doc
-    opt: 
+    strategy: all
+    opt: allow_merge=true,merge_file_name=cooking 

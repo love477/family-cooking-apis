@@ -1,12 +1,17 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "proto/service.proto",
-    "version": "version not set"
+    "title": "Swagger Sample App",
+    "description": "This is a sample server Petstore server.",
+    "version": "0.0.1",
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
   },
   "tags": [
     {
-      "name": "FamilyCookingService"
+      "name": "CookingService"
     }
   ],
   "consumes": [
@@ -18,12 +23,13 @@
   "paths": {
     "/v1/hello": {
       "get": {
-        "operationId": "FamilyCookingService_SayHello",
+        "description": "say hello",
+        "operationId": "CookingService_SayHello",
         "responses": {
           "200": {
             "description": "A successful response.",
             "schema": {
-              "$ref": "#/definitions/SayHelloRes"
+              "$ref": "#/definitions/v1SayHelloResponse"
             }
           },
           "default": {
@@ -42,20 +48,12 @@
           }
         ],
         "tags": [
-          "FamilyCookingService"
+          "option"
         ]
       }
     }
   },
   "definitions": {
-    "SayHelloRes": {
-      "type": "object",
-      "properties": {
-        "data": {
-          "type": "string"
-        }
-      }
-    },
     "protobufAny": {
       "type": "object",
       "properties": {
@@ -80,6 +78,14 @@
           "items": {
             "$ref": "#/definitions/protobufAny"
           }
+        }
+      }
+    },
+    "v1SayHelloResponse": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "string"
         }
       }
     }

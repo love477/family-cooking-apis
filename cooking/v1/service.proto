@@ -1,0 +1,32 @@
+syntax = "proto3";
+
+package cooking.v1;
+
+option go_package = "family-cooking-apis/v1";
+option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_swagger) = {
+  info: {
+    title: "Swagger Sample App",
+    description: "This is a sample server Petstore server.",
+    license: {
+      name: "Apache 2.0",
+      url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+    },
+    version: "0.0.1"
+  }
+};
+
+import "google/api/annotations.proto";
+import "protoc-gen-openapiv2/options/annotations.proto";
+import "cooking/v1/menu.proto";
+
+service CookingService {
+  rpc SayHello(SayHelloRequest) returns (SayHelloResponse) {
+    option (google.api.http) = {
+      get: "/v1/hello"
+    };
+    option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_operation) = {
+        tags: "option"
+        description: "say hello"
+    };
+  }
+}
